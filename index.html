@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiosque da Vila — Ecrã Principal</title>
+  <style>
+    :root{
+      --text: #fff;
+      --muted: #e0e0e0;
+      --radius: 18px;
+      --btn-size: 110px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:40px 20px;
+      background:url("IMG_2687.jpeg") no-repeat center center/cover;
+      position:relative;
+    }
+
+    /* overlay fosco */
+    body::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+      backdrop-filter: blur(2px);
+      z-index:0;
+    }
+
+    .sheet{
+      width:100%;
+      max-width:880px;
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+
+    header{
+      margin-bottom:40px;
+    }
+    h1{
+      font-weight:700;
+      letter-spacing: -0.02em;
+      font-size: clamp(2rem, 4.8vw, 3rem);
+    }
+    p.lead{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    .center {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      justify-items:center;
+      align-items:center;
+      margin-top:24px;
+      margin-inline:auto;
+      max-width:320px;
+    }
+
+    .big-btn{
+      --size: var(--btn-size);
+      width: var(--size);
+      height: var(--size);
+      background: rgba(255,255,255,0.3); /* menos transparente */
+      border-radius: var(--radius);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:8px;
+      color:var(--text);
+      font-weight:600;
+      font-size:0.9rem;
+      border: 2px solid rgba(255,255,255,0.35);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease;
+    }
+
+    .big-btn:hover{ background: rgba(255,255,255,0.5); transform: translateY(-3px) }
+    .big-btn:active{ transform: translateY(1px) scale(.98) }
+
+   .big-btn img{
+  width:60px;
+  height:60px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.25);
+  padding:4px;
+}
+
+    }
+
+    .big-btn small{
+      display:block;
+      font-weight:500;
+      color:var(--muted);
+      font-size:0.7rem;
+    }
+
+    @media (max-width:420px){
+      .center{ grid-template-columns: 1fr 1fr; gap:12px }
+      .big-btn{ --size: 38vw }
+    }
+    @media (max-width:340px){
+      .center{ grid-template-columns: 1fr }
+      .big-btn{ --size: 68vw }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header>
+      <h1>Quiosque da Vila</h1>
+      <p class="lead">Escolhe uma opção para começar</p>
+    </header>
+
+    <section class="center">
+      <button class="big-btn" onclick="location.href='comidas.html'">
+        <img src="https://cdn-icons-png.flaticon.com/512/8512/8512345.png" alt="">
+        <span>Comidas</span>
+        <small>Ver opções</small>
+      </button>
+
+      <button class="big-btn" onclick="location.href='bebidas.html'">
+        <img src="https://cdn-icons-png.flaticon.com/256/2405/2405451.png" alt="">
+        <span>Bebidas</span>
+        <small>Ver lista</small>
+      </button>
+
+      <button class="big-btn" onclick="location.href='staff.html'">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+        <span>Staff</span>
+        <small>Contactos</small>
+      </button>
+
+      <button class="big-btn" onclick="location.href='horarios.html'">
+        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827379.png" alt="">
+        <span>Horários</span>
+        <small>Consultar</small>
+      </button>
+    </section>
+  </main>
+</body>
+</html>
