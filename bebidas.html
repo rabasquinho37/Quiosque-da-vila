@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Comidas</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-image: url('IMG_2693.jpeg'); /* sua imagem */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* mantém a imagem parada */
+        color: #000;
+        line-height: 1.6;
+        padding: 15px;
+    }
+
+    /* Overlay fixo para legibilidade */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 0;
+    }
+
+    /* Conteúdo acima do overlay */
+    .content, .back-button, .title {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Botão de voltar */
+    .back-button {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 6px 10px;
+        background-color: rgba(224,224,224,0.4); /* menos cinza */
+        transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+        color: #ff9900;
+        border-color: #ff9900;
+    }
+
+    /* Título abaixo da seta */
+    .title {
+        position: fixed;
+        top: 90px;
+        left: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    /* Área de texto rolável */
+    .content {
+        margin-top: 150px; /* distância do título */
+        max-width: 600px;
+    }
+</style>
+</head>
+<body>
+    <a href="index.html" class="back-button">←</a>
+    <div class="title">🍹 Menu Bebidas</div>
+
+
+</body>
+</html>
